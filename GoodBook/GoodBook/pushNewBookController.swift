@@ -8,10 +8,11 @@
 
 import UIKit
 
-class pushNewBookController: UIViewController,bookTitleDelegate {
+class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDelegate {
 
     
     var BookTitle : BookTitleView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +31,17 @@ class pushNewBookController: UIViewController,bookTitleDelegate {
         print("choiceCover")
         
         let photoPicker = photoPickerViewController()
+        photoPicker.delegate = self
         
         self.present(photoPicker, animated: true) {
             
         }
+    }
+    
+    //photoPickerDelegate
+    func getImageFromPicker(image: UIImage) {
         
+        self.BookTitle?.BookCover?.setImage(image, for: .normal)
     }
 
     func closeAction() {
