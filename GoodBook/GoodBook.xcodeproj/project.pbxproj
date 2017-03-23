@@ -8,20 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		99DCD8C41E8396DE0092B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8C31E8396DE0092B064 /* AppDelegate.swift */; };
-		99DCD8C61E8396DE0092B064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8C51E8396DE0092B064 /* ViewController.swift */; };
-		99DCD8C91E8396DE0092B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99DCD8C71E8396DE0092B064 /* Main.storyboard */; };
 		99DCD8CB1E8396DE0092B064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99DCD8CA1E8396DE0092B064 /* Assets.xcassets */; };
 		99DCD8CE1E8396DE0092B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99DCD8CC1E8396DE0092B064 /* LaunchScreen.storyboard */; };
+		99DCD8DA1E839B760092B064 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8D91E839B760092B064 /* config.swift */; };
+		99DCD8E11E839C370092B064 /* rankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8E01E839C370092B064 /* rankViewController.swift */; };
+		99DCD8E31E839C450092B064 /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8E21E839C450092B064 /* searchViewController.swift */; };
+		99DCD8E51E839C580092B064 /* pushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8E41E839C580092B064 /* pushViewController.swift */; };
+		99DCD8E71E839C650092B064 /* circleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8E61E839C650092B064 /* circleViewController.swift */; };
+		99DCD8E91E839C6A0092B064 /* moreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8E81E839C6A0092B064 /* moreViewController.swift */; };
+		DABCFE9E0C6B0FD51B20D991 /* libPods-GoodBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E800CB1233CF18CE371F096 /* libPods-GoodBook.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18011512484ED08BF14135CD /* Pods-GoodBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBook/Pods-GoodBook.release.xcconfig"; sourceTree = "<group>"; };
+		3C7D6132D226C5C1497DC6AC /* Pods-GoodBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBook/Pods-GoodBook.debug.xcconfig"; sourceTree = "<group>"; };
 		99DCD8C01E8396DE0092B064 /* GoodBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DCD8C31E8396DE0092B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99DCD8C51E8396DE0092B064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		99DCD8C81E8396DE0092B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99DCD8CA1E8396DE0092B064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99DCD8CD1E8396DE0092B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99DCD8CF1E8396DE0092B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99DCD8D71E839AB10092B064 /* bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
+		99DCD8D91E839B760092B064 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		99DCD8E01E839C370092B064 /* rankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankViewController.swift; sourceTree = "<group>"; };
+		99DCD8E21E839C450092B064 /* searchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
+		99DCD8E41E839C580092B064 /* pushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pushViewController.swift; sourceTree = "<group>"; };
+		99DCD8E61E839C650092B064 /* circleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleViewController.swift; sourceTree = "<group>"; };
+		99DCD8E81E839C6A0092B064 /* moreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moreViewController.swift; sourceTree = "<group>"; };
+		9E800CB1233CF18CE371F096 /* libPods-GoodBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoodBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +42,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABCFE9E0C6B0FD51B20D991 /* libPods-GoodBook.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F326BB8DDA0D0B5FED6904D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C7D6132D226C5C1497DC6AC /* Pods-GoodBook.debug.xcconfig */,
+				18011512484ED08BF14135CD /* Pods-GoodBook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		99DCD8B71E8396DE0092B064 = {
 			isa = PBXGroup;
 			children = (
+				99DCD8D51E839A4A0092B064 /* frameWork */,
 				99DCD8C21E8396DE0092B064 /* GoodBook */,
 				99DCD8C11E8396DE0092B064 /* Products */,
+				8F326BB8DDA0D0B5FED6904D /* Pods */,
+				F226D09BD849D79A1500007A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,74 @@
 		99DCD8C21E8396DE0092B064 /* GoodBook */ = {
 			isa = PBXGroup;
 			children = (
+				99DCD8DF1E839C200092B064 /* more */,
+				99DCD8DE1E839C140092B064 /* circle */,
+				99DCD8DD1E839C0D0092B064 /* push */,
+				99DCD8DC1E839C090092B064 /* search */,
+				99DCD8DB1E839C030092B064 /* rank */,
 				99DCD8C31E8396DE0092B064 /* AppDelegate.swift */,
-				99DCD8C51E8396DE0092B064 /* ViewController.swift */,
-				99DCD8C71E8396DE0092B064 /* Main.storyboard */,
 				99DCD8CA1E8396DE0092B064 /* Assets.xcassets */,
 				99DCD8CC1E8396DE0092B064 /* LaunchScreen.storyboard */,
 				99DCD8CF1E8396DE0092B064 /* Info.plist */,
+				99DCD8D71E839AB10092B064 /* bridging.h */,
+				99DCD8D91E839B760092B064 /* config.swift */,
 			);
 			path = GoodBook;
+			sourceTree = "<group>";
+		};
+		99DCD8D51E839A4A0092B064 /* frameWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = frameWork;
+			sourceTree = "<group>";
+		};
+		99DCD8DB1E839C030092B064 /* rank */ = {
+			isa = PBXGroup;
+			children = (
+				99DCD8E01E839C370092B064 /* rankViewController.swift */,
+			);
+			name = rank;
+			sourceTree = "<group>";
+		};
+		99DCD8DC1E839C090092B064 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				99DCD8E21E839C450092B064 /* searchViewController.swift */,
+			);
+			name = search;
+			sourceTree = "<group>";
+		};
+		99DCD8DD1E839C0D0092B064 /* push */ = {
+			isa = PBXGroup;
+			children = (
+				99DCD8E41E839C580092B064 /* pushViewController.swift */,
+			);
+			name = push;
+			sourceTree = "<group>";
+		};
+		99DCD8DE1E839C140092B064 /* circle */ = {
+			isa = PBXGroup;
+			children = (
+				99DCD8E61E839C650092B064 /* circleViewController.swift */,
+			);
+			name = circle;
+			sourceTree = "<group>";
+		};
+		99DCD8DF1E839C200092B064 /* more */ = {
+			isa = PBXGroup;
+			children = (
+				99DCD8E81E839C6A0092B064 /* moreViewController.swift */,
+			);
+			name = more;
+			sourceTree = "<group>";
+		};
+		F226D09BD849D79A1500007A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E800CB1233CF18CE371F096 /* libPods-GoodBook.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99DCD8D21E8396DE0092B064 /* Build configuration list for PBXNativeTarget "GoodBook" */;
 			buildPhases = (
+				EB48D34AA3D512F6A9476B17 /* [CP] Check Pods Manifest.lock */,
 				99DCD8BC1E8396DE0092B064 /* Sources */,
 				99DCD8BD1E8396DE0092B064 /* Frameworks */,
 				99DCD8BE1E8396DE0092B064 /* Resources */,
+				F860C68106B2CAEC5BBAF4CB /* [CP] Embed Pods Frameworks */,
+				0CE1EAA411ACCFDAED26F4C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,33 +215,77 @@
 			files = (
 				99DCD8CE1E8396DE0092B064 /* LaunchScreen.storyboard in Resources */,
 				99DCD8CB1E8396DE0092B064 /* Assets.xcassets in Resources */,
-				99DCD8C91E8396DE0092B064 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CE1EAA411ACCFDAED26F4C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodBook/Pods-GoodBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB48D34AA3D512F6A9476B17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F860C68106B2CAEC5BBAF4CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodBook/Pods-GoodBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		99DCD8BC1E8396DE0092B064 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99DCD8C61E8396DE0092B064 /* ViewController.swift in Sources */,
+				99DCD8DA1E839B760092B064 /* config.swift in Sources */,
+				99DCD8E31E839C450092B064 /* searchViewController.swift in Sources */,
+				99DCD8E11E839C370092B064 /* rankViewController.swift in Sources */,
+				99DCD8E51E839C580092B064 /* pushViewController.swift in Sources */,
+				99DCD8E91E839C6A0092B064 /* moreViewController.swift in Sources */,
 				99DCD8C41E8396DE0092B064 /* AppDelegate.swift in Sources */,
+				99DCD8E71E839C650092B064 /* circleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		99DCD8C71E8396DE0092B064 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				99DCD8C81E8396DE0092B064 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		99DCD8CC1E8396DE0092B064 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -204,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -247,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -257,26 +390,32 @@
 		};
 		99DCD8D31E8396DE0092B064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C7D6132D226C5C1497DC6AC /* Pods-GoodBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AKEZGLTY8R;
 				INFOPLIST_FILE = GoodBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhanghaiyong.GoodBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = GoodBook/bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		99DCD8D41E8396DE0092B064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18011512484ED08BF14135CD /* Pods-GoodBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AKEZGLTY8R;
 				INFOPLIST_FILE = GoodBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhanghaiyong.GoodBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = GoodBook/bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +439,7 @@
 				99DCD8D41E8396DE0092B064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+
+target 'GoodBook' do
+
+
+pod 'MJExtension'
+pod 'MJRefresh'
+pod 'SDWebImage'
+pod 'Reachability'
+pod 'IQKeyboardManager','3.3.7'
+pod 'AVOSCloud' 
+pod 'MWPhotoBrowser', '~> 2.1.2'
+end
