@@ -10,4 +10,5 @@ pod 'Reachability'
 pod 'IQKeyboardManager','3.3.7'
 pod 'AVOSCloud' 
 pod 'MWPhotoBrowser', '~> 2.1.2'
+pod 'JVFloatLabeledTextField'
 end

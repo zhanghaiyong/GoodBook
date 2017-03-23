@@ -13,23 +13,35 @@ class pushViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor.white
+        self.setNavigationBar()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setNavigationBar() {
+        
+        let navigationView = UIView(frame: CGRect(x: 0, y: -20, width: SCREEN_WIDTH, height: 65))
+        navigationView.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.addSubview(navigationView)
+        
+        let addBookBtn = UIButton(frame: CGRect(x: 20, y: 20, width: SCREEN_WIDTH, height: 45))
+        addBookBtn.setImage(UIImage.init(named: "plus circle"), for: .normal)
+        addBookBtn.setTitleColor(UIColor.black, for: .normal)
+        addBookBtn.setTitle("    新建标题", for: .normal)
+        addBookBtn.titleLabel?.font = UIFont(name: MY_FONT, size: 15)
+        addBookBtn.contentHorizontalAlignment = .left
+        addBookBtn .addTarget(self, action: #selector(pushViewController.pushNewBook), for: .touchUpInside)
+        navigationView.addSubview(addBookBtn)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func pushNewBook() {
+        
+        let vc = pushNewBookController()
+        GeneralFactory.addTitleWithTitle(target: vc, title: "关闭", title2:"发布")
+        self.present(vc, animated: true) { }
+        
     }
-    */
 
 }
