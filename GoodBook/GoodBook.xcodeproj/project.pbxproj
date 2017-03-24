@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99B95E441E85115D002B2AC3 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E431E85115D002B2AC3 /* VPImageCropperViewController.m */; };
+		99B95E461E851D53002B2AC3 /* Push_TitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E451E851D53002B2AC3 /* Push_TitleController.swift */; };
+		99B95E481E851D62002B2AC3 /* Push_TypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E471E851D62002B2AC3 /* Push_TypeController.swift */; };
+		99B95E4A1E851D72002B2AC3 /* Push_DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E491E851D72002B2AC3 /* Push_DescriptionController.swift */; };
 		99DCD8C41E8396DE0092B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DCD8C31E8396DE0092B064 /* AppDelegate.swift */; };
 		99DCD8CB1E8396DE0092B064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99DCD8CA1E8396DE0092B064 /* Assets.xcassets */; };
 		99DCD8CE1E8396DE0092B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99DCD8CC1E8396DE0092B064 /* LaunchScreen.storyboard */; };
@@ -40,6 +44,11 @@
 /* Begin PBXFileReference section */
 		18011512484ED08BF14135CD /* Pods-GoodBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBook/Pods-GoodBook.release.xcconfig"; sourceTree = "<group>"; };
 		3C7D6132D226C5C1497DC6AC /* Pods-GoodBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBook/Pods-GoodBook.debug.xcconfig"; sourceTree = "<group>"; };
+		99B95E421E85115D002B2AC3 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		99B95E431E85115D002B2AC3 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		99B95E451E851D53002B2AC3 /* Push_TitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_TitleController.swift; sourceTree = "<group>"; };
+		99B95E471E851D62002B2AC3 /* Push_TypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_TypeController.swift; sourceTree = "<group>"; };
+		99B95E491E851D72002B2AC3 /* Push_DescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_DescriptionController.swift; sourceTree = "<group>"; };
 		99DCD8C01E8396DE0092B064 /* GoodBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99DCD8C31E8396DE0092B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99DCD8CA1E8396DE0092B064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +103,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		99B95E411E85115D002B2AC3 /* VPImageCropperViewController */ = {
+			isa = PBXGroup;
+			children = (
+				99B95E421E85115D002B2AC3 /* VPImageCropperViewController.h */,
+				99B95E431E85115D002B2AC3 /* VPImageCropperViewController.m */,
+			);
+			name = VPImageCropperViewController;
+			path = Image/VPImageCropperViewController;
+			sourceTree = "<group>";
+		};
 		99DCD8B71E8396DE0092B064 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +155,7 @@
 		99DCD8D51E839A4A0092B064 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				99B95E411E85115D002B2AC3 /* VPImageCropperViewController */,
 				99DCD8FD1E83B8AF0092B064 /* Image */,
 				99DCD8EC1E83A5DC0092B064 /* 隶变体.ttf */,
 			);
@@ -236,6 +256,9 @@
 			children = (
 				99DCD8F51E83AB150092B064 /* pushNewBookController.swift */,
 				99DCD9181E83BD280092B064 /* photoPickerViewController.swift */,
+				99B95E451E851D53002B2AC3 /* Push_TitleController.swift */,
+				99B95E471E851D62002B2AC3 /* Push_TypeController.swift */,
+				99B95E491E851D72002B2AC3 /* Push_DescriptionController.swift */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -414,13 +437,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DCD8F91E83AC040092B064 /* GeneralFactory.swift in Sources */,
+				99B95E481E851D62002B2AC3 /* Push_TypeController.swift in Sources */,
 				99DCD8DA1E839B760092B064 /* config.swift in Sources */,
 				99DCD8FB1E83B5DA0092B064 /* BookTitleView.swift in Sources */,
 				99DCD8E31E839C450092B064 /* searchViewController.swift in Sources */,
 				99DCD8E11E839C370092B064 /* rankViewController.swift in Sources */,
+				99B95E4A1E851D72002B2AC3 /* Push_DescriptionController.swift in Sources */,
 				99DCD8E51E839C580092B064 /* pushViewController.swift in Sources */,
 				99DCD9191E83BD280092B064 /* photoPickerViewController.swift in Sources */,
+				99B95E461E851D53002B2AC3 /* Push_TitleController.swift in Sources */,
 				99DCD8E91E839C6A0092B064 /* moreViewController.swift in Sources */,
+				99B95E441E85115D002B2AC3 /* VPImageCropperViewController.m in Sources */,
 				99DCD8C41E8396DE0092B064 /* AppDelegate.swift in Sources */,
 				99DCD8E71E839C650092B064 /* circleViewController.swift in Sources */,
 				99DCD8F61E83AB150092B064 /* pushNewBookController.swift in Sources */,

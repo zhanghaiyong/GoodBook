@@ -17,12 +17,14 @@ import UIKit
 
 class BookTitleView: UIView {
 
-    //可选变量
+    //可选变量 封面
     var BookCover : UIButton?
-    
+    //书名
     var BookName :  JVFloatLabeledTextField?
+    //作者
     var BookEditor :  JVFloatLabeledTextField?
-    var delegate:bookTitleDelegate?
+    
+    var delegate : bookTitleDelegate?
     
     override init(frame: CGRect) {
         
@@ -31,7 +33,7 @@ class BookTitleView: UIView {
         self.BookCover = UIButton(frame: CGRect(x: 10, y: 0, width: 110, height: 141))
         self.BookCover?.setImage(UIImage.init(named: "Cover"), for: .normal)
         self.addSubview(self.BookCover!) //解包
-        self.BookCover?.addTarget(self, action: #selector(bookTitleDelegate.choiceCover), for: .touchUpInside)
+        self.BookCover?.addTarget(self, action: #selector(BookTitleView.choiceCoverAction), for: .touchUpInside)
         
         
         self.BookName = JVFloatLabeledTextField(frame: CGRect(x: 128, y: 8+40, width: SCREEN_WIDTH-128-15, height: 30))
@@ -52,7 +54,7 @@ class BookTitleView: UIView {
         
     }
     
-    func choiceCover() {
+    func choiceCoverAction() {
         
         self.delegate?.choiceCover!()
         

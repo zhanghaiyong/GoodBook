@@ -39,7 +39,7 @@ class pushViewController: UIViewController {
     func pushNewBook() {
         
         let vc = pushNewBookController()
-        GeneralFactory.addTitleWithTitle(target: vc, title: "关闭", title2:"发布")
+        GeneralFactory.addTitleWithTitle(target: vc, title1: "关闭", title2:"发布")
         self.present(vc, animated: true) { }
         
     }

@@ -12,10 +12,10 @@ class GeneralFactory: NSObject {
 
     
     //有默认参数的静态函数
-    static func addTitleWithTitle(target:UIViewController,title:String = "关闭" , title2 :String = "确认") {
+    static func addTitleWithTitle(target:UIViewController,title1:String = "关闭" , title2 :String = "确认") {
     
         let Btn1 = UIButton(frame: CGRect(x: 10, y: 20, width: 40, height: 20))
-        Btn1.setTitle(title, for: .normal)
+        Btn1.setTitle(title1, for: .normal)
         Btn1.contentHorizontalAlignment = .left
         Btn1.setTitleColor(MAIN_RED, for: .normal)
         Btn1.titleLabel?.font = UIFont(name: MY_FONT, size: 14)
