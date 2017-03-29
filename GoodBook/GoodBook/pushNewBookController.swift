@@ -15,6 +15,9 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     var tableView : UITableView?
     var titleArray : Array<String> = []
     var Book_title = ""
+    var score : LDXScore?
+    //是否显示星星
+    var showScore : Bool = false
     
     
     override func viewDidLoad() {
@@ -38,8 +41,21 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         
         
         self.titleArray = ["标题","评分","分类","书评"]
+        
+        
+        self.score = LDXScore(frame: CGRect(x: 100, y: 10, width: 100, height: 22))
+        self.score?.isSelect = true
+        self.score?.normalImg = UIImage(named: "btn_star_evaluation_normal")
+        self.score?.highlightImg = UIImage(named: "btn_star_evaluation_press")
+        self.score?.max_star = 5
+        self.score?.show_star = 5;
     }
     
+    deinit {
+    
+        //打印了就没有发生内存泄露
+        print("ddd");
+    }
     
     //UITableViewDelegate&&dataSource
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,6 +63,7 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return self.titleArray.count
     }
     
@@ -72,19 +89,13 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         case 0:
             cell.detailTextLabel?.text = self.Book_title
             break
-        case 1:
-            
-            break
-        case 2:
-            
-            break
-        case 3:
-            
-            break
-            
         default:
-            
             break
+        }
+        
+        if self.showScore && indexPath.row == 2 {
+            
+            cell.contentView.addSubview(score!)
         }
         
         return cell
@@ -93,7 +104,14 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView?.deselectRow(at: indexPath, animated: true)
         
-        switch indexPath.row {
+        var row = indexPath.row
+        
+        if self.showScore && row>=1 {
+            row -= 1
+        }
+        
+        
+        switch row {
         case 0:
             self.tableViewSelectTitle()
             
@@ -135,13 +153,35 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     //选择评分
     func tableViewSelectRank() {
         
+        self.tableView?.beginUpdates()
+        let tempIndexPath = [NSIndexPath(item: 2, section: 0)]
+        if self.showScore {
+            self.showScore = false
+            self.titleArray.remove(at: 2)
+            self.tableView?.deleteRows(at: tempIndexPath as [IndexPath], with: .right)
+            
+        }else {
+        
+            self.showScore = true
+            self.titleArray.insert("", at: 2)
+            
+            self.tableView?.insertRows(at: tempIndexPath as [IndexPath], with: .left)
+            
+        }
+        self.tableView?.endUpdates()
+
     }
     
     //选择分类
     func tableViewSelectType() {
-        let pushTitle = Push_TypeController()
-        GeneralFactory.addTitleWithTitle(target: pushTitle)
-        self.present(pushTitle, animated: true) {
+        let pushType = Push_TypeController()
+        GeneralFactory.addTitleWithTitle(target: pushType)
+        let btn1 = pushType.view.viewWithTag(100) as! UIButton
+        let btn2 = pushType.view.viewWithTag(101) as! UIButton
+        btn1 .setTitleColor(RGB(r: 38,g: 82,b: 67), for: .normal)
+        btn2 .setTitleColor(RGB(r: 38,g: 82,b: 67), for: .normal)
+        
+        self.present(pushType, animated: true) {
             
         }
     }

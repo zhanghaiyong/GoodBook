@@ -19,6 +19,7 @@ class GeneralFactory: NSObject {
         Btn1.contentHorizontalAlignment = .left
         Btn1.setTitleColor(MAIN_RED, for: .normal)
         Btn1.titleLabel?.font = UIFont(name: MY_FONT, size: 14)
+        Btn1.tag = 100
         target.view.addSubview(Btn1)
         
         let Btn2 = UIButton(frame: CGRect(x: SCREEN_WIDTH-50, y: 20, width: 40, height: 20))
@@ -26,6 +27,7 @@ class GeneralFactory: NSObject {
         Btn2.contentHorizontalAlignment = .right
         Btn2.setTitleColor(MAIN_RED, for: .normal)
         Btn2.titleLabel?.font = UIFont(name: MY_FONT, size: 14)
+        Btn2.tag = 101
         target.view.addSubview(Btn2)
         
         Btn1.addTarget(target, action: Selector(("closeAction")), for: .touchUpInside)
