@@ -12,6 +12,7 @@ import UIKit
 //OC协议
 @objc protocol bookTitleDelegate {
 
+    //可选
     @objc optional func choiceCover()
 }
 

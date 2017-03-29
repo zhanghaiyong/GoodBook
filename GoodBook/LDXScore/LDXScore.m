@@ -38,7 +38,7 @@
     return self;
 }
 
--(void)setup{
+-(void)setup {
     if(_max_star<1)
         _max_star = 5;
     

@@ -29,6 +29,10 @@
 		9987FA591E8A831E00E7DA87 /* star-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9987FA481E8A831E00E7DA87 /* star-icon@2x.png */; };
 		999E4CC01E8B473E005A62A9 /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E4CBD1E8B473E005A62A9 /* IGLDropDownItem.m */; };
 		999E4CC11E8B473E005A62A9 /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E4CBF1E8B473E005A62A9 /* IGLDropDownMenu.m */; };
+		999E4CC51E8B8128005A62A9 /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E4CC31E8B8128005A62A9 /* XKeyBoard.m */; };
+		999E4CC71E8B86A9005A62A9 /* PushBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E4CC61E8B86A9005A62A9 /* PushBook.swift */; };
+		999E4CCC1E8B8D16005A62A9 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 999E4CC91E8B8D16005A62A9 /* ProgressHUD.bundle */; };
+		999E4CCD1E8B8D16005A62A9 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E4CCB1E8B8D16005A62A9 /* ProgressHUD.m */; };
 		99B95E441E85115D002B2AC3 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E431E85115D002B2AC3 /* VPImageCropperViewController.m */; };
 		99B95E461E851D53002B2AC3 /* Push_TitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E451E851D53002B2AC3 /* Push_TitleController.swift */; };
 		99B95E481E851D62002B2AC3 /* Push_TypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B95E471E851D62002B2AC3 /* Push_TypeController.swift */; };
@@ -92,6 +96,12 @@
 		999E4CBD1E8B473E005A62A9 /* IGLDropDownItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLDropDownItem.m; sourceTree = "<group>"; };
 		999E4CBE1E8B473E005A62A9 /* IGLDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGLDropDownMenu.h; sourceTree = "<group>"; };
 		999E4CBF1E8B473E005A62A9 /* IGLDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLDropDownMenu.m; sourceTree = "<group>"; };
+		999E4CC21E8B8128005A62A9 /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
+		999E4CC31E8B8128005A62A9 /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
+		999E4CC61E8B86A9005A62A9 /* PushBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushBook.swift; sourceTree = "<group>"; };
+		999E4CC91E8B8D16005A62A9 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		999E4CCA1E8B8D16005A62A9 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		999E4CCB1E8B8D16005A62A9 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		99B95E421E85115D002B2AC3 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		99B95E431E85115D002B2AC3 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		99B95E451E851D53002B2AC3 /* Push_TitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_TitleController.swift; sourceTree = "<group>"; };
@@ -206,6 +216,26 @@
 			path = IGLDropDownMenu;
 			sourceTree = "<group>";
 		};
+		999E4CC41E8B8128005A62A9 /* XKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				999E4CC21E8B8128005A62A9 /* XKeyBoard.h */,
+				999E4CC31E8B8128005A62A9 /* XKeyBoard.m */,
+			);
+			name = XKeyBoard;
+			path = "../../Downloads/第十三课/XBook/XKeyBoard";
+			sourceTree = "<group>";
+		};
+		999E4CC81E8B8D16005A62A9 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				999E4CC91E8B8D16005A62A9 /* ProgressHUD.bundle */,
+				999E4CCA1E8B8D16005A62A9 /* ProgressHUD.h */,
+				999E4CCB1E8B8D16005A62A9 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		99B95E411E85115D002B2AC3 /* VPImageCropperViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +288,8 @@
 		99DCD8D51E839A4A0092B064 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				999E4CC81E8B8D16005A62A9 /* ProgressHUD */,
+				999E4CC41E8B8128005A62A9 /* XKeyBoard */,
 				999E4CBB1E8B473E005A62A9 /* IGLDropDownMenu */,
 				9987FA351E8A831E00E7DA87 /* AKSegmentedControl */,
 				9987FA2D1E8A746400E7DA87 /* LDXScore */,
@@ -345,6 +377,7 @@
 		99DCD8F21E83AAED0092B064 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				999E4CC61E8B86A9005A62A9 /* PushBook.swift */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -491,6 +524,7 @@
 				9987FA4D1E8A831E00E7DA87 /* segmented-bg-pressed-left@2x.png in Resources */,
 				9987FA531E8A831E00E7DA87 /* segmented-separator@2x.png in Resources */,
 				9987FA4A1E8A831E00E7DA87 /* segmented-bg-pressed-center.png in Resources */,
+				999E4CCC1E8B8D16005A62A9 /* ProgressHUD.bundle in Resources */,
 				9987FA541E8A831E00E7DA87 /* settings-icon.png in Resources */,
 				9987FA551E8A831E00E7DA87 /* settings-icon@2x.png in Resources */,
 				99DCD8ED1E83A5DC0092B064 /* 隶变体.ttf in Resources */,
@@ -566,15 +600,18 @@
 				99DCD8FB1E83B5DA0092B064 /* BookTitleView.swift in Sources */,
 				99DCD8E31E839C450092B064 /* searchViewController.swift in Sources */,
 				99DCD8E11E839C370092B064 /* rankViewController.swift in Sources */,
+				999E4CCD1E8B8D16005A62A9 /* ProgressHUD.m in Sources */,
 				99B95E4A1E851D72002B2AC3 /* Push_DescriptionController.swift in Sources */,
 				99DCD8E51E839C580092B064 /* pushViewController.swift in Sources */,
 				99DCD9191E83BD280092B064 /* photoPickerViewController.swift in Sources */,
 				9987FA341E8A746400E7DA87 /* LDXScore.m in Sources */,
 				99B95E461E851D53002B2AC3 /* Push_TitleController.swift in Sources */,
+				999E4CC71E8B86A9005A62A9 /* PushBook.swift in Sources */,
 				999E4CC11E8B473E005A62A9 /* IGLDropDownMenu.m in Sources */,
 				99DCD8E91E839C6A0092B064 /* moreViewController.swift in Sources */,
 				999E4CC01E8B473E005A62A9 /* IGLDropDownItem.m in Sources */,
 				99B95E441E85115D002B2AC3 /* VPImageCropperViewController.m in Sources */,
+				999E4CC51E8B8128005A62A9 /* XKeyBoard.m in Sources */,
 				99DCD8C41E8396DE0092B064 /* AppDelegate.swift in Sources */,
 				99DCD8E71E839C650092B064 /* circleViewController.swift in Sources */,
 				99DCD8F61E83AB150092B064 /* pushNewBookController.swift in Sources */,

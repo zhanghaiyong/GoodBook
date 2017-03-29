@@ -15,6 +15,9 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     var tableView : UITableView?
     var titleArray : Array<String> = []
     var Book_title = ""
+    var Book_Type = ""
+    var Book_DetailType = ""
+    var Book_description = ""
     var score : LDXScore?
     //是否显示星星
     var showScore : Bool = false
@@ -49,10 +52,27 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         self.score?.highlightImg = UIImage(named: "btn_star_evaluation_press")
         self.score?.max_star = 5
         self.score?.show_star = 5;
+        
+        NotificationCenter.default.addObserver(self, selector: Selector(("pushBookNotification:")), name: NSNotification.Name(rawValue: "pushBookNotification"), object: nil)
+    }
+    
+    func pushBookNotification(notication : NSNotification) {
+        
+        let dict = notication.userInfo
+        if String(describing: dict!["success"]!) == "true"{
+            ProgressHUD.showSuccess("上传成功")
+            self.dismiss(animated: true, completion: { () -> Void in
+                
+            })
+        }else{
+            ProgressHUD.showError("上传失败")
+        }
     }
     
     deinit {
     
+        NotificationCenter.default.removeObserver(self)
+        
         //打印了就没有发生内存泄露
         print("ddd");
     }
@@ -85,9 +105,22 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.textLabel?.font = UIFont(name: MY_FONT, size: 15)
         cell.detailTextLabel?.font = UIFont(name: MY_FONT, size: 13)
-        switch indexPath.row {
+        
+        var row = indexPath.row
+        
+        if self.showScore && row>=1 {
+            row -= 1
+        }
+        
+        switch row {
         case 0:
             cell.detailTextLabel?.text = self.Book_title
+            break
+        case 2:
+            cell.detailTextLabel?.text = self.Book_Type + " " + self.Book_DetailType
+            break
+        case 3:
+            cell.detailTextLabel?.text = self.Book_description
             break
         default:
             break
@@ -106,7 +139,7 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         
         var row = indexPath.row
         
-        if self.showScore && row>=1 {
+        if self.showScore && row>1 {
             row -= 1
         }
         
@@ -181,6 +214,14 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         btn1 .setTitleColor(RGB(r: 38,g: 82,b: 67), for: .normal)
         btn2 .setTitleColor(RGB(r: 38,g: 82,b: 67), for: .normal)
         
+        pushType.callBack = ({(_ type: String,_ detail: String) -> Void in
+            
+            self.Book_Type = type
+            self.Book_DetailType = detail
+            self.tableView?.reloadData()
+            
+            })
+        
         self.present(pushType, animated: true) {
             
         }
@@ -188,9 +229,15 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     
     //选择书评
     func tableViewSelectDespription() {
-        let pushTitle = Push_DescriptionController()
-        GeneralFactory.addTitleWithTitle(target: pushTitle)
-        self.present(pushTitle, animated: true) {
+        let pushDescription = Push_DescriptionController()
+        pushDescription.callBack = ({(_ description : String) -> Void in
+        
+            self.Book_description = description
+            self.tableView?.reloadData()
+        })
+        
+        GeneralFactory.addTitleWithTitle(target: pushDescription)
+        self.present(pushDescription, animated: true) {
             
         }
     }
@@ -245,6 +292,19 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
     //发布
     func sureAction() {
         
+        let dict = [
+        
+            "BookName":(self.BookTitle?.BookName?.text)! as String,
+            "BookEditor":(self.BookTitle?.BookEditor?.text)! as String ,
+            "BookCover":(self.BookTitle?.BookCover?.currentImage)! as UIImage,
+            "Title":self.Book_title,
+            "Score":String((self.score?.show_star)!),
+            "Type":self.Book_Type,
+            "DetaileType":self.Book_DetailType,
+            "Description":self.Book_description
+        ] as [String : Any]
+        
+        PushBook.pushBookInBack(dict: dict as NSDictionary)
     }
 
 }

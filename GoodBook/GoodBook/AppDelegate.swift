@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         
+        
+        
+        AVOSCloud.setApplicationId("Hnxntsao7goM3z2y9S4O0XGl-gzGzoHsz", clientKey: "WQSvl4lUAgIGeo7ntFzHGSex")
+        
         let tabbarController = UITabBarController()
         
         let rank   = UINavigationController(rootViewController: rankViewController())

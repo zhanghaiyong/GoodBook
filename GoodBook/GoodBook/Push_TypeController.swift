@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias Push_typeBlock = (_ type: String,_ detail: String) -> Void
+
 class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
 
     
@@ -34,6 +36,9 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
     
     var dropDownMenu1 : IGLDropDownMenu?
     var dropDownMenu2 : IGLDropDownMenu?
+    
+    var callBack : Push_typeBlock?
+    
     
     var type = "文学"
     var detailType = "文学"
@@ -159,6 +164,10 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
     //发布
     func sureAction() {
         
+        self.callBack!(self.type,self.detailType)
+        self.dismiss(animated: true) { 
+            
+        }
     }
     
     
@@ -195,6 +204,9 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
     func segmentCtrl(segment : AKSegmentedControl) {
         
         var index = Int((segment.selectedIndexes.first)!)
+        
+        self.type = ((segment.buttonsArray[index] as? UIButton)?.currentTitle)!
+        
         print("\(index)")
         //恢复展开状态
         if segment == self.segmentCtrl1 {

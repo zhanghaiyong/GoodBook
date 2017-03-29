@@ -100,7 +100,6 @@ class photoPickerViewController: UIViewController,UIImagePickerControllerDelegat
                 self.delegate?.getImageFromPicker(image: image)
             })
         })
-        
     }
     
     //取消
