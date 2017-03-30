@@ -8,7 +8,7 @@
 
 import UIKit
 
-class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDelegate,VPImageCropperDelegate,UITableViewDelegate,UITableViewDataSource {
+class pushNewBookController: BaseViewController,bookTitleDelegate,PhotoPickerDelegate,VPImageCropperDelegate,UITableViewDelegate,UITableViewDataSource {
 
     
     var BookTitle : BookTitleView?
@@ -53,28 +53,30 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         self.score?.max_star = 5
         self.score?.show_star = 5;
         
-        NotificationCenter.default.addObserver(self, selector: Selector(("pushBookNotification:")), name: NSNotification.Name(rawValue: "pushBookNotification"), object: nil)
+        let NotifyChatMsgRecv = NSNotification.Name(rawValue:"pushBookNotify")
+        //接受通知监听
+        NotificationCenter.default.addObserver(self, selector:#selector(didMsgRecv(notification:)),
+                                               name: NotifyChatMsgRecv, object: nil)
     }
-    
-    func pushBookNotification(notication : NSNotification) {
-        
-        let dict = notication.userInfo
-        if String(describing: dict!["success"]!) == "true"{
-            ProgressHUD.showSuccess("上传成功")
-            self.dismiss(animated: true, completion: { () -> Void in
-                
-            })
-        }else{
-            ProgressHUD.showError("上传失败")
+        //通知处理函数
+        func didMsgRecv(notification:NSNotification){
+            let dict = notification.userInfo
+            if String(describing: dict!["success"]!) == "true"{
+                ProgressHUD.showSuccess("上传成功")
+                self.dismiss(animated: true, completion: { () -> Void in
+                    
+                })
+            }else{
+                ProgressHUD.showError("上传失败")
+            }
         }
-    }
     
     deinit {
     
         NotificationCenter.default.removeObserver(self)
         
-        //打印了就没有发生内存泄露
-        print("ddd");
+        //执行了此方法就代表这个控制器没有发生内存泄露
+        print("发生内存泄露");
     }
     
     //UITableViewDelegate&&dataSource
@@ -102,6 +104,14 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
             cell.accessoryType = .disclosureIndicator
         }
         
+        if self.showScore && indexPath.row == 5 {
+            
+            cell.accessoryType = .none
+        }else if !self.showScore && indexPath.row == 4 {
+        
+            cell.accessoryType = .none
+        }
+        
         cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.textLabel?.font = UIFont(name: MY_FONT, size: 15)
         cell.detailTextLabel?.font = UIFont(name: MY_FONT, size: 13)
@@ -122,6 +132,16 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         case 3:
             cell.detailTextLabel?.text = self.Book_description
             break
+        case 4:
+            
+            let textView = UITextView(frame: CGRect(x: 4, y: 4, width: SCREEN_WIDTH-8, height: 80))
+            textView.text = self.Book_description
+            textView.isEditable = false
+            textView.font = UIFont(name: MY_FONT, size: 14)
+            textView.textColor = UIColor.gray
+            cell.contentView.addSubview(textView)
+            
+            break
         default:
             break
         }
@@ -134,6 +154,21 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if self.showScore && indexPath.row == 5 {
+        
+            return 88
+            
+        }else if !self.showScore && indexPath.row == 4 {
+        
+            return 88
+        }else {
+        
+            return 44
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView?.deselectRow(at: indexPath, animated: true)
         
@@ -142,7 +177,6 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         if self.showScore && row>1 {
             row -= 1
         }
-        
         
         switch row {
         case 0:
@@ -233,9 +267,18 @@ class pushNewBookController: UIViewController,bookTitleDelegate,PhotoPickerDeleg
         pushDescription.callBack = ({(_ description : String) -> Void in
         
             self.Book_description = description
+            
+            if self.titleArray.last == "" {
+            
+                self.titleArray.removeLast()
+            }else {
+               self.titleArray.append("")
+            }
+            
             self.tableView?.reloadData()
         })
         
+        pushDescription.textView?.text = self.Book_description
         GeneralFactory.addTitleWithTitle(target: pushDescription)
         self.present(pushDescription, animated: true) {
             

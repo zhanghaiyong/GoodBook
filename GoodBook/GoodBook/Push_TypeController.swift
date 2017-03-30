@@ -10,7 +10,7 @@ import UIKit
 
 typealias Push_typeBlock = (_ type: String,_ detail: String) -> Void
 
-class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
+class Push_TypeController: BaseViewController,IGLDropDownMenuDelegate {
 
     
     var segmentCtrl1 : AKSegmentedControl?
@@ -208,7 +208,7 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
         self.type = ((segment.buttonsArray[index] as? UIButton)?.currentTitle)!
         
         print("\(index)")
-        //恢复展开状态
+        //恢复选中状态
         if segment == self.segmentCtrl1 {
             self.segmentCtrl1?.selectedIndexes = NSIndexSet(index: 3) as IndexSet!
         }else {
@@ -246,7 +246,6 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
             break
             
         }
-
     }
     
     

@@ -2,7 +2,6 @@
 //宏定义文件
 import Foundation
 
-
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height

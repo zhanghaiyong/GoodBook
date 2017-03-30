@@ -12,7 +12,7 @@ protocol PhotoPickerDelegate {
     func getImageFromPicker(image : UIImage)
 }
 
-class photoPickerViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class photoPickerViewController: BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     var alertCtrl : UIAlertController?
     var picker : UIImagePickerController?

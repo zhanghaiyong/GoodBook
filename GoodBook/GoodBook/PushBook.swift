@@ -8,10 +8,15 @@
 
 import UIKit
 
+typealias pushBookBlock = () -> Void
+
 class PushBook: NSObject {
 
+    var callBack : pushBookBlock?
+    
     static func pushBookInBack(dict : NSDictionary) {
     
+        ProgressHUD.show("上传中...")
         
         let object = AVObject(className: "Book")
         //书名
@@ -28,11 +33,14 @@ class PushBook: NSObject {
         object.setObject(dict["DetailType"], forKey: "DetailType")
         //描述
         object.setObject(dict["Description"], forKey: "Description")
-        
+        //用户
+        object.setObject(AVUser.current(), forKey: "User")
         //封面
         let cover = dict["BookCover"] as? UIImage
         let coverFile = AVFile(data: UIImagePNGRepresentation(cover!)!)
         coverFile.saveInBackground { (success, error) in
+            
+            ProgressHUD.dismiss()
             
             if success {
             
@@ -40,15 +48,26 @@ class PushBook: NSObject {
                 object.saveInBackground({ (success, error) in
                     
                     if success {
-                    
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pushBookNotifation"), object: nil, userInfo: ["success":"true"])
+                        
+                        //通知名称常量
+                        let NotifyChatMsgRecv = NSNotification.Name(rawValue:"pushBookNotify")
+                        //发送通知
+                        NotificationCenter.default.post(name:NotifyChatMsgRecv, object: nil, userInfo: ["success":"true"])
+
                     }else {
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pushBookNotifation"), object: nil, userInfo: ["success":"false"])
+                        
+                        //通知名称常量
+                        let NotifyChatMsgRecv = NSNotification.Name(rawValue:"pushBookNotify")
+                        //发送通知
+                        NotificationCenter.default.post(name:NotifyChatMsgRecv, object: nil, userInfo: ["success":"false"])
                     }
                 })
             }else {
             
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pushBookNotifation"), object: nil, userInfo: ["success":"false"])
+                //通知名称常量
+                let NotifyChatMsgRecv = NSNotification.Name(rawValue:"pushBookNotify")
+                //发送通知
+                NotificationCenter.default.post(name:NotifyChatMsgRecv, object: nil, userInfo: ["success":"false"])
             }
             
         }

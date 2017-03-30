@@ -11,7 +11,7 @@ import UIKit
 //1 声明block
 typealias Push_TitleCallBack = (_ title:String) ->Void
 
-class Push_TitleController: UIViewController {
+class Push_TitleController: BaseViewController {
 
     var textField :UITextField?
     

@@ -20,7 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         
         
+        UINavigationBar.appearance().tintColor = UIColor.gray
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -65), for:.default)
         
+        
+        let manager = IQKeyboardManager.shared()
+        manager.isEnabled = true
+        manager.shouldResignOnTouchOutside = true
+        manager.shouldToolbarUsesTextFieldTintColor = false
+        manager.isEnableAutoToolbar = false
+
         AVOSCloud.setApplicationId("Hnxntsao7goM3z2y9S4O0XGl-gzGzoHsz", clientKey: "WQSvl4lUAgIGeo7ntFzHGSex")
         
         let tabbarController = UITabBarController()

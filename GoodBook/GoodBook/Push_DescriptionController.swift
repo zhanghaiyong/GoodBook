@@ -10,7 +10,7 @@ import UIKit
 
 typealias Push_DescriptionBlock = (_ description : String) -> Void
 
-class Push_DescriptionController: UIViewController {
+class Push_DescriptionController: BaseViewController {
 
     var textView : JVFloatLabeledTextView?
     
@@ -27,18 +27,9 @@ class Push_DescriptionController: UIViewController {
         self.textView?.placeholder = "     你可以在这里撰写详细的评价、吐槽、介绍~ ~"
         self.textView?.font = UIFont(name: MY_FONT, size: 17)
         self.view.tintColor = UIColor.gray
-//        self.textView?.becomeFirstResponder()
-        
-//        XKeyBoard.registerShow(self)
-//        XKeyBoard.registerHide(self)
-        
+        self.textView?.becomeFirstResponder()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //关闭
     func closeAction() {
         
@@ -55,21 +46,4 @@ class Push_DescriptionController: UIViewController {
             
         }
     }
-    
-    
-    /**
-     *  键盘遮挡
-     */
-    func keyboardWillHideNotification(notification:NSNotification){
-        
-        self.textView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-    }
-    func keyboardWillShowNotification(notification:NSNotification){
-        
-        let rect = XKeyBoard.returnWindow(notification as Notification!)
-        
-        self.textView?.contentInset = UIEdgeInsetsMake(0, 0, rect.size.height, 0)
-        
-    }
-
 }

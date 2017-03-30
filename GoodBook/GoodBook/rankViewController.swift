@@ -8,22 +8,20 @@
 
 import UIKit
 
-class rankViewController: UIViewController {
+class rankViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
         
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.center = self.view.center
-        label.textAlignment = NSTextAlignment.center
-        label.adjustsFontSizeToFitWidth = true
-        //label.font = UIFont(name: "Bauhaus ITC", size: 13)
-        label.text = "测试"
-        label.textColor = UIColor.black
-        self.view.addSubview(label)
+        if AVUser.current() == nil { //未登录
+        let sb = UIStoryboard(name: "Login", bundle: nil)
+            let loginVC = sb.instantiateViewController(withIdentifier: "Login")
+            self.present(loginVC, animated: true, completion: { 
+                
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
