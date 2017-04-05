@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BookTabBar" customModule="GoodBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4p-C0-d0e">
+                    <rect key="frame" x="0.0" y="1" width="88.5" height="53"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="Pen 4"/>
+                    <connections>
+                        <action selector="commentAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="YNJ-54-fAi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOd-Vt-D3F">
+                    <rect key="frame" x="90.5" y="1" width="88" height="53"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="chat 3"/>
+                    <connections>
+                        <action selector="chatAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gwk-vh-pVB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAr-6e-CLo">
+                    <rect key="frame" x="180.5" y="1" width="88.5" height="53"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="heart"/>
+                    <connections>
+                        <action selector="collectAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ETX-G9-uPr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-lp-byB">
+                    <rect key="frame" x="271" y="1" width="88" height="53"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="box outgoing"/>
+                    <connections>
+                        <action selector="shareAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="EqV-0m-jmQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HAr-6e-CLo" firstAttribute="top" secondItem="fOd-Vt-D3F" secondAttribute="top" id="2g0-sP-eHa"/>
+                <constraint firstItem="fOd-Vt-D3F" firstAttribute="top" secondItem="o4p-C0-d0e" secondAttribute="top" id="3Nz-ss-aMo"/>
+                <constraint firstItem="o4p-C0-d0e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CQG-QZ-W22"/>
+                <constraint firstItem="DEP-lp-byB" firstAttribute="leading" secondItem="HAr-6e-CLo" secondAttribute="trailing" constant="2" id="EWC-ek-R1K"/>
+                <constraint firstItem="DEP-lp-byB" firstAttribute="top" secondItem="HAr-6e-CLo" secondAttribute="top" id="G63-RJ-XQU"/>
+                <constraint firstItem="DEP-lp-byB" firstAttribute="width" secondItem="o4p-C0-d0e" secondAttribute="width" id="GcZ-R8-RDs"/>
+                <constraint firstAttribute="bottom" secondItem="fOd-Vt-D3F" secondAttribute="bottom" id="IhJ-6R-lmb"/>
+                <constraint firstAttribute="bottom" secondItem="DEP-lp-byB" secondAttribute="bottom" id="PYw-UB-vFf"/>
+                <constraint firstItem="HAr-6e-CLo" firstAttribute="width" secondItem="o4p-C0-d0e" secondAttribute="width" id="SX7-mI-0OO"/>
+                <constraint firstAttribute="bottom" secondItem="HAr-6e-CLo" secondAttribute="bottom" id="Sre-A1-Ga3"/>
+                <constraint firstAttribute="trailing" secondItem="DEP-lp-byB" secondAttribute="trailing" id="TgH-6j-uyM"/>
+                <constraint firstAttribute="bottom" secondItem="o4p-C0-d0e" secondAttribute="bottom" id="XMe-au-IVC"/>
+                <constraint firstItem="fOd-Vt-D3F" firstAttribute="width" secondItem="o4p-C0-d0e" secondAttribute="width" id="ZXo-CZ-1PL"/>
+                <constraint firstItem="o4p-C0-d0e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="o72-Nd-dI2"/>
+                <constraint firstItem="fOd-Vt-D3F" firstAttribute="leading" secondItem="o4p-C0-d0e" secondAttribute="trailing" constant="2" id="rKJ-r5-rUp"/>
+                <constraint firstItem="HAr-6e-CLo" firstAttribute="leading" secondItem="fOd-Vt-D3F" secondAttribute="trailing" constant="2" id="y3R-AZ-nlh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="chatBtn" destination="fOd-Vt-D3F" id="PPy-F5-sIx"/>
+                <outlet property="collectBtn" destination="HAr-6e-CLo" id="OWe-H7-Pcb"/>
+                <outlet property="commentBtn" destination="o4p-C0-d0e" id="8Ay-Dh-vNQ"/>
+                <outlet property="shareBtn" destination="DEP-lp-byB" id="qlY-JM-Heq"/>
+            </connections>
+            <point key="canvasLocation" x="-73.5" y="195"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Pen 4" width="29" height="29"/>
+        <image name="box outgoing" width="29" height="30"/>
+        <image name="chat 3" width="28" height="26"/>
+        <image name="heart" width="22" height="20"/>
+    </resources>
+</document>

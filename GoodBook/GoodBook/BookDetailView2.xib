@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="隶变体.ttf">
+            <string>BauhausITC</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BookDetailView2" customModule="GoodBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="212"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obG-kN-x1l">
+                    <rect key="frame" x="8" y="8" width="147" height="196"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="obG-kN-x1l" secondAttribute="height" multiplier="3:4" id="62W-47-xcG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0E-Te-a9M">
+                    <rect key="frame" x="163" y="40.5" width="200" height="33"/>
+                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMd-k2-4cX">
+                    <rect key="frame" x="163" y="73.5" width="200" height="32.5"/>
+                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYo-Ox-xUl">
+                    <rect key="frame" x="163" y="106" width="200" height="32.5"/>
+                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94W-e6-e7Y">
+                    <rect key="frame" x="163" y="171.5" width="200" height="32.5"/>
+                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-gv-zZK" customClass="LDXScore">
+                    <rect key="frame" x="163" y="138.5" width="200" height="33"/>
+                    <color key="backgroundColor" red="0.91764705879999997" green="0.3294117647" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="max_star">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="image" keyPath="normalImg" value="btn_star_evaluation_normal"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="highlightImg" value="btn_star_evaluation_press"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3km-vj-ytP">
+                    <rect key="frame" x="163" y="8" width="200" height="32.5"/>
+                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SMd-k2-4cX" secondAttribute="trailing" constant="8" id="0Lf-Ew-LlD"/>
+                <constraint firstItem="94W-e6-e7Y" firstAttribute="top" secondItem="0Ci-gv-zZK" secondAttribute="bottom" id="1t1-Wh-6OM"/>
+                <constraint firstItem="eYo-Ox-xUl" firstAttribute="height" secondItem="3km-vj-ytP" secondAttribute="height" id="2l2-c8-vhM"/>
+                <constraint firstItem="SMd-k2-4cX" firstAttribute="top" secondItem="h0E-Te-a9M" secondAttribute="bottom" id="2vd-eT-7e4"/>
+                <constraint firstItem="h0E-Te-a9M" firstAttribute="top" secondItem="3km-vj-ytP" secondAttribute="bottom" id="5Ed-95-D04"/>
+                <constraint firstItem="3km-vj-ytP" firstAttribute="leading" secondItem="obG-kN-x1l" secondAttribute="trailing" constant="8" id="6cd-jc-9Ji"/>
+                <constraint firstItem="3km-vj-ytP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Ebf-QJ-CbB"/>
+                <constraint firstItem="obG-kN-x1l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="GKY-Sv-hG7"/>
+                <constraint firstItem="SMd-k2-4cX" firstAttribute="height" secondItem="3km-vj-ytP" secondAttribute="height" id="HQa-e3-eDU"/>
+                <constraint firstItem="94W-e6-e7Y" firstAttribute="leading" secondItem="obG-kN-x1l" secondAttribute="trailing" constant="8" id="Oy9-hx-Erw"/>
+                <constraint firstItem="0Ci-gv-zZK" firstAttribute="leading" secondItem="obG-kN-x1l" secondAttribute="trailing" constant="8" id="S54-Eh-zc7"/>
+                <constraint firstAttribute="bottom" secondItem="obG-kN-x1l" secondAttribute="bottom" constant="8" id="T8d-7G-9Di"/>
+                <constraint firstItem="eYo-Ox-xUl" firstAttribute="top" secondItem="SMd-k2-4cX" secondAttribute="bottom" id="XRB-Sr-TZb"/>
+                <constraint firstAttribute="trailing" secondItem="0Ci-gv-zZK" secondAttribute="trailing" constant="8" id="ZKk-L9-y0t"/>
+                <constraint firstItem="94W-e6-e7Y" firstAttribute="height" secondItem="3km-vj-ytP" secondAttribute="height" id="aeB-fP-IVS"/>
+                <constraint firstItem="0Ci-gv-zZK" firstAttribute="top" secondItem="eYo-Ox-xUl" secondAttribute="bottom" id="daK-G2-aFF"/>
+                <constraint firstAttribute="bottom" secondItem="94W-e6-e7Y" secondAttribute="bottom" constant="8" id="fQZ-wC-oJy"/>
+                <constraint firstItem="0Ci-gv-zZK" firstAttribute="height" secondItem="3km-vj-ytP" secondAttribute="height" id="fSZ-ta-4yI"/>
+                <constraint firstAttribute="trailing" secondItem="94W-e6-e7Y" secondAttribute="trailing" constant="8" id="hHK-yz-Gge"/>
+                <constraint firstItem="h0E-Te-a9M" firstAttribute="height" secondItem="3km-vj-ytP" secondAttribute="height" id="lgl-5C-WZq"/>
+                <constraint firstItem="obG-kN-x1l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="mfi-w1-mxc"/>
+                <constraint firstItem="eYo-Ox-xUl" firstAttribute="leading" secondItem="obG-kN-x1l" secondAttribute="trailing" constant="8" id="pkO-CN-T84"/>
+                <constraint firstAttribute="trailing" secondItem="3km-vj-ytP" secondAttribute="trailing" constant="8" id="vgj-Mt-C62"/>
+                <constraint firstAttribute="trailing" secondItem="eYo-Ox-xUl" secondAttribute="trailing" constant="8" id="wTT-8h-S5k"/>
+                <constraint firstItem="SMd-k2-4cX" firstAttribute="leading" secondItem="obG-kN-x1l" secondAttribute="trailing" constant="8" id="wsL-ii-NQ9"/>
+                <constraint firstAttribute="trailing" secondItem="h0E-Te-a9M" secondAttribute="trailing" constant="8" id="yQU-mm-msA"/>
+                <constraint firstItem="h0E-Te-a9M" firstAttribute="leading" secondItem="obG-kN-x1l" secondAttribute="trailing" constant="8" id="yad-0o-gpu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="BookName" destination="3km-vj-ytP" id="yNq-82-eVJ"/>
+                <outlet property="Date" destination="eYo-Ox-xUl" id="Ubb-py-eJS"/>
+                <outlet property="Editor" destination="h0E-Te-a9M" id="aPn-MN-O3f"/>
+                <outlet property="More" destination="94W-e6-e7Y" id="Ywv-1k-qL0"/>
+                <outlet property="UserName" destination="SMd-k2-4cX" id="P67-30-wV7"/>
+                <outlet property="cover" destination="obG-kN-x1l" id="jqm-c0-zJq"/>
+                <outlet property="score" destination="0Ci-gv-zZK" id="61r-Ml-6kz"/>
+            </connections>
+            <point key="canvasLocation" x="14.5" y="-62"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_star_evaluation_normal" width="200" height="200"/>
+        <image name="btn_star_evaluation_press" width="200" height="200"/>
+    </resources>
+</document>
