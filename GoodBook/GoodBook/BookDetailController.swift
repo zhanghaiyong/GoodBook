@@ -8,15 +8,23 @@
 
 import UIKit
 
-class BookDetailController: UIViewController,BookTabBarDelegate {
+class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegate {
 
     var bookObject : AVObject?
     var bookDetailView : BookDetailView2?
     var bookTabBar : BookTabBar?
     var bookTextView : UITextView?
+    var inputV : InputView?
+    var keyBoardHeight : CGFloat?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let manager = IQKeyboardManager.shared()
+        manager.isEnabled = false
+        
         self.view.backgroundColor = UIColor.white
         
         self.bookDetailView = Bundle.main.loadNibNamed("BookDetailView2", owner: self, options: nil)?.last as? BookDetailView2
@@ -84,6 +92,66 @@ class BookDetailController: UIViewController,BookTabBarDelegate {
         }
     }
     
+    //InputViewDelegate
+    func keyBoardWillShow(_ view: InputView!, keyBoardH: CGFloat, animationDuration duration: TimeInterval, animationCurve: UIViewAnimationCurve) {
+        
+        self.keyBoardHeight = keyBoardH
+        UIView.animate(withDuration: duration, delay: 0, options: .beginFromCurrentState, animations: {
+            
+            self.inputV?.bottom = SCREEN_HEIGHT - keyBoardH
+            
+        }) { (finish) in
+        }
+        
+    }
+    
+    func keyBoardWillHide(_ view: InputView!, keyBoardH: CGFloat, animationDuration duration: TimeInterval, animationCurve: UIViewAnimationCurve) {
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .beginFromCurrentState, animations: { 
+            
+            self.inputV?.bottom = SCREEN_HEIGHT + (self.inputV?.height)!
+            
+        }) { (finish) in
+            
+        }
+    }
+    
+    func textViewHeightDidChange(_ height: CGFloat) {
+        
+        self.inputV?.height = height
+        self.inputV?.bottom = SCREEN_HEIGHT - self.keyBoardHeight!
+        
+    }
+    
+    func releaseComment(_ comment: String!) {
+        
+        if comment != nil {
+        
+            let object = AVObject(className: "comment")
+            object.setObject(comment, forKey: "text")
+            object.setObject(AVUser.current(), forKey: "User")
+            object.setObject(self.bookObject, forKey: "BookObject")
+            object.saveInBackground({ (success, error) in
+                
+                if success {
+                
+                    self.inputV?.textView.resignFirstResponder()
+                    ProgressHUD.showSuccess("评论成功")
+                    
+                    //更新评论数
+                    self.bookObject?.incrementKey("commentNumber")
+                    self.bookObject?.saveInBackground()
+                }else {
+                
+                    ProgressHUD.showError("评论失败")
+                }
+            })
+        }else {
+        
+            ProgressHUD.show("说点什么吧！！")
+        }
+    }
+    
     //BookTabBarDelegate
     func btnClick(tag: Int) {
         
@@ -92,6 +160,13 @@ class BookDetailController: UIViewController,BookTabBarDelegate {
             
             print("comment")
             
+            if self.inputV == nil {
+                self.inputV = Bundle.main.loadNibNamed("InputView", owner: self, options: nil)?.last as? InputView
+                self.inputV?.frame = CGRect(x: 0, y: SCREEN_HEIGHT-44, width: SCREEN_WIDTH, height: 44)
+                self.inputV?.delegate = self;
+                self.view.addSubview(self.inputV!)
+            }
+            self.inputV?.textView.becomeFirstResponder()
             break
         case 1:
             print("chat")
@@ -151,10 +226,9 @@ class BookDetailController: UIViewController,BookTabBarDelegate {
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.inputV?.textView.resignFirstResponder()
     }
     
 }

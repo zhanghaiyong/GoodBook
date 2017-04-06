@@ -16,45 +16,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InputView" customModule="GoodBook" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="373" height="49"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InputView">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pgO-Ze-puZ">
-                    <rect key="frame" x="8" y="8" width="297" height="33"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiM-2s-Ybt">
+                    <rect key="frame" x="318" y="0.0" width="50" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="BZG-37-VDT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="15"/>
+                    <state key="normal" title="发布"/>
+                    <connections>
+                        <action selector="releaseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="rvg-Cd-sLF"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-U7-szq">
+                    <rect key="frame" x="8" y="8" width="302" height="54"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kx-cM-OMa">
-                    <rect key="frame" x="313" y="0.0" width="60" height="49"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="ybF-Sv-Ucl"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="17"/>
-                    <state key="normal" title="发布">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
                     <connections>
-                        <action selector="subitAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Z6e-2s-MKG"/>
+                        <outlet property="delegate" destination="-1" id="0iN-Tr-W4r"/>
                     </connections>
-                </button>
+                </textView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="pgO-Ze-puZ" secondAttribute="bottom" constant="8" id="0mf-qP-Vl4"/>
-                <constraint firstItem="pgO-Ze-puZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="2g1-K8-pd0"/>
-                <constraint firstItem="2kx-cM-OMa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hy7-4m-6hO"/>
-                <constraint firstAttribute="bottom" secondItem="2kx-cM-OMa" secondAttribute="bottom" id="Jqb-1m-aph"/>
-                <constraint firstItem="pgO-Ze-puZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OK5-YD-AMo"/>
-                <constraint firstAttribute="trailing" secondItem="2kx-cM-OMa" secondAttribute="trailing" id="fm6-En-QsX"/>
-                <constraint firstItem="2kx-cM-OMa" firstAttribute="leading" secondItem="pgO-Ze-puZ" secondAttribute="trailing" constant="8" id="i4C-90-4CP"/>
+                <constraint firstItem="7Io-U7-szq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="2ax-Hm-jhh"/>
+                <constraint firstItem="ZiM-2s-Ybt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JNd-qO-TQ7"/>
+                <constraint firstItem="ZiM-2s-Ybt" firstAttribute="leading" secondItem="7Io-U7-szq" secondAttribute="trailing" constant="8" id="Kei-4Q-wH7"/>
+                <constraint firstAttribute="bottom" secondItem="ZiM-2s-Ybt" secondAttribute="bottom" id="hv8-nU-nsw"/>
+                <constraint firstAttribute="trailing" secondItem="ZiM-2s-Ybt" secondAttribute="trailing" id="jQC-7X-fi0"/>
+                <constraint firstAttribute="bottom" secondItem="7Io-U7-szq" secondAttribute="bottom" constant="8" id="lAW-Gx-EGf"/>
+                <constraint firstItem="7Io-U7-szq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="puG-Va-w9e"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="textView" destination="pgO-Ze-puZ" id="0Jl-3C-gza"/>
+                <outlet property="textView" destination="7Io-U7-szq" id="Haw-f5-evs"/>
             </connections>
-            <point key="canvasLocation" x="24.5" y="110.5"/>
+            <point key="canvasLocation" x="36" y="-5"/>
         </view>
     </objects>
 </document>
