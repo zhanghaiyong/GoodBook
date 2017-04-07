@@ -21,6 +21,8 @@
 @end
 
 @interface InputView : UIView<UITextViewDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (nonatomic,assign)id<InputViewDelegate>delegate;
 

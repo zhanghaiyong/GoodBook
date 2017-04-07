@@ -10,22 +10,16 @@ import UIKit
 
 class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,InputViewDelegate {
 
+    @IBOutlet weak var inputV: InputView!
     var BookObject : AVObject?
     var dataArray = NSMutableArray()
     var keyBoardHeight : CGFloat?
-    var inputV: InputView?
+    
     
     @IBOutlet weak var tableV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        self.inputV = Bundle.main.loadNibNamed("InputView", owner: self, options: nil)?.last as? InputView
-        self.inputV?.frame = CGRect(x: 0, y: SCREEN_HEIGHT-44, width: SCREEN_WIDTH, height: 44)
-        self.inputV?.delegate = self;
-        self.inputV?.backgroundColor = UIColor.red
-        self.view.addSubview(self.inputV!)
         
         self.tableV.estimatedRowHeight = 300
         self.tableV.rowHeight = UITableViewAutomaticDimension
@@ -80,6 +74,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         })
         
         self.tableV.mj_header.beginRefreshing()
+        
+        self.inputV!.textView.text = "fsdgdfsjhzdsfhs";
     }
 
     //UITableViewDelegate && UITablViewDataSource
