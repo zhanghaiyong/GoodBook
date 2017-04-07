@@ -12,6 +12,10 @@
 		997077B81E960E4400BBB11F /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997077B71E960E4400BBB11F /* InputView.m */; };
 		997077BA1E960E4D00BBB11F /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997077B91E960E4D00BBB11F /* InputView.xib */; };
 		997077BD1E960F5A00BBB11F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 997077BC1E960F5A00BBB11F /* UIViewExt.m */; };
+		998060B41E972943003E377C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998060B21E972943003E377C /* CommentViewController.swift */; };
+		998060B51E972943003E377C /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998060B31E972943003E377C /* CommentViewController.xib */; };
+		998060B81E972BC8003E377C /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998060B61E972BC8003E377C /* CommentCell.swift */; };
+		998060B91E972BC8003E377C /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998060B71E972BC8003E377C /* CommentCell.xib */; };
 		99842D821E8CF19200935DCC /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99842D811E8CF19200935DCC /* BookDetailController.swift */; };
 		9987FA321E8A746400E7DA87 /* btn_star_evaluation_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9987FA2E1E8A746400E7DA87 /* btn_star_evaluation_normal.png */; };
 		9987FA331E8A746400E7DA87 /* btn_star_evaluation_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 9987FA2F1E8A746400E7DA87 /* btn_star_evaluation_press.png */; };
@@ -89,6 +93,10 @@
 		997077B91E960E4D00BBB11F /* InputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputView.xib; sourceTree = "<group>"; };
 		997077BB1E960F5A00BBB11F /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		997077BC1E960F5A00BBB11F /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		998060B21E972943003E377C /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		998060B31E972943003E377C /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		998060B61E972BC8003E377C /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		998060B71E972BC8003E377C /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		99842D811E8CF19200935DCC /* BookDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
 		9987FA2E1E8A746400E7DA87 /* btn_star_evaluation_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_normal.png; sourceTree = "<group>"; };
 		9987FA2F1E8A746400E7DA87 /* btn_star_evaluation_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_press.png; sourceTree = "<group>"; };
@@ -210,6 +218,8 @@
 				99409E6B1E8E40E0008E694A /* BookDetailView2.xib */,
 				99BD80AD1E8F7D3F00639E5C /* BookTabBar.swift */,
 				99BD80AB1E8F7D2F00639E5C /* BookTabBar.xib */,
+				998060B61E972BC8003E377C /* CommentCell.swift */,
+				998060B71E972BC8003E377C /* CommentCell.xib */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -218,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				99842D811E8CF19200935DCC /* BookDetailController.swift */,
+				998060B21E972943003E377C /* CommentViewController.swift */,
+				998060B31E972943003E377C /* CommentViewController.xib */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -586,10 +598,12 @@
 				9987FA581E8A831E00E7DA87 /* star-icon.png in Resources */,
 				99DCD9131E83B8AF0092B064 /* page1.png in Resources */,
 				99DCD9171E83B8AF0092B064 /* red_point.png in Resources */,
+				998060B91E972BC8003E377C /* CommentCell.xib in Resources */,
 				99DCD9101E83B8AF0092B064 /* ear2.png in Resources */,
 				99B94C061E8BC68100CA166C /* Login.storyboard in Resources */,
 				9987FA511E8A831E00E7DA87 /* segmented-bg@2x.png in Resources */,
 				9987FA501E8A831E00E7DA87 /* segmented-bg.png in Resources */,
+				998060B51E972943003E377C /* CommentViewController.xib in Resources */,
 				99DCD9161E83B8AF0092B064 /* page4.png in Resources */,
 				9987FA321E8A746400E7DA87 /* btn_star_evaluation_normal.png in Resources */,
 				9987FA331E8A746400E7DA87 /* btn_star_evaluation_press.png in Resources */,
@@ -697,6 +711,7 @@
 				9998B5DD1E8CE3DC00DB1D97 /* PushBook_Cell.swift in Sources */,
 				999E4CC11E8B473E005A62A9 /* IGLDropDownMenu.m in Sources */,
 				99DCD8E91E839C6A0092B064 /* moreViewController.swift in Sources */,
+				998060B41E972943003E377C /* CommentViewController.swift in Sources */,
 				997077BD1E960F5A00BBB11F /* UIViewExt.m in Sources */,
 				999E4CC01E8B473E005A62A9 /* IGLDropDownItem.m in Sources */,
 				99B95E441E85115D002B2AC3 /* VPImageCropperViewController.m in Sources */,
@@ -705,6 +720,7 @@
 				99DCD8F61E83AB150092B064 /* pushNewBookController.swift in Sources */,
 				9987FA491E8A831E00E7DA87 /* AKSegmentedControl.m in Sources */,
 				99409E6A1E8E40D8008E694A /* BookDetailView2.swift in Sources */,
+				998060B81E972BC8003E377C /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

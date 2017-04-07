@@ -70,6 +70,7 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
         
         self.bookTextView = UITextView(frame: CGRect(x: 0, y: 60+SCREEN_HEIGHT/4, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-64-40-SCREEN_HEIGHT/4))
         self.bookTextView?.isEditable = false
+        self.bookTextView?.isUserInteractionEnabled = false
         self.bookTextView?.font = UIFont(name: MY_FONT, size: 15)
         self.bookTextView?.text = self.bookObject!["Description"] as? String
         self.view.addSubview(self.bookTextView!)
@@ -118,9 +119,10 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
     
     func textViewHeightDidChange(_ height: CGFloat) {
         
-        self.inputV?.height = height
-        self.inputV?.bottom = SCREEN_HEIGHT - self.keyBoardHeight!
-        
+        if height > (self.inputV?.height)! && (self.inputV?.height)! < 100 {
+            self.inputV?.height = height+10
+            self.inputV?.bottom = SCREEN_HEIGHT - self.keyBoardHeight!
+        }
     }
     
     func releaseComment(_ comment: String!) {
@@ -136,10 +138,14 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
                 if success {
                 
                     self.inputV?.textView.resignFirstResponder()
+                    self.inputV?.frame.size = CGSize(width: SCREEN_WIDTH, height: 44)
+                    self.inputV?.textView.text = ""
                     ProgressHUD.showSuccess("评论成功")
                     
-                    //更新评论数
+                    // 原子增加查看的次数
                     self.bookObject?.incrementKey("commentNumber")
+                    // 保存时自动取回云端最新数据
+                    self.bookObject?.fetchWhenSave = true;
                     self.bookObject?.saveInBackground()
                 }else {
                 
@@ -170,6 +176,13 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
             break
         case 1:
             print("chat")
+            
+            let commentVC = CommentViewController()
+            commentVC.BookObject = self.bookObject!
+            self.present(commentVC, animated: true, completion: { 
+                
+            })
+            
             break
         case 2:
             print("collect")

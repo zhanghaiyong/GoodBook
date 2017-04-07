@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="隶变体.ttf">
+            <string>BauhausITC</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="CommentCell" customModule="GoodBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9IK-nl-kbM">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Pqg-RP-vSt"/>
+                            <constraint firstAttribute="width" constant="40" id="eDy-7n-b5j"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE2-pZ-9Si">
+                        <rect key="frame" x="56" y="8" width="256" height="17"/>
+                        <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaB-nf-V7d">
+                        <rect key="frame" x="56" y="68" width="248" height="17"/>
+                        <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2z-wm-mBr">
+                        <rect key="frame" x="56" y="38" width="248" height="17"/>
+                        <fontDescription key="fontDescription" name="BauhausITC" family="Bauhaus ITC" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="I2z-wm-mBr" firstAttribute="top" secondItem="fE2-pZ-9Si" secondAttribute="bottom" constant="8" id="3Y6-Lz-FaI"/>
+                    <constraint firstItem="EaB-nf-V7d" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="8" id="65a-ht-WHn"/>
+                    <constraint firstItem="9IK-nl-kbM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="H6N-ng-Ilt"/>
+                    <constraint firstItem="EaB-nf-V7d" firstAttribute="top" secondItem="I2z-wm-mBr" secondAttribute="bottom" constant="8" id="HSe-Da-2Ie"/>
+                    <constraint firstItem="fE2-pZ-9Si" firstAttribute="leading" secondItem="9IK-nl-kbM" secondAttribute="trailing" constant="8" id="J1Y-6t-Xkm"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="I2z-wm-mBr" secondAttribute="trailing" constant="8" id="Vp5-F6-Q9E"/>
+                    <constraint firstItem="EaB-nf-V7d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="48" id="YXX-LC-l9q"/>
+                    <constraint firstItem="fE2-pZ-9Si" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="gdt-yh-GVw"/>
+                    <constraint firstItem="EaB-nf-V7d" firstAttribute="top" secondItem="I2z-wm-mBr" secondAttribute="bottom" constant="8" id="jm4-hD-4ZN"/>
+                    <constraint firstItem="I2z-wm-mBr" firstAttribute="leading" secondItem="9IK-nl-kbM" secondAttribute="trailing" constant="8" id="kwF-EF-JnH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EaB-nf-V7d" secondAttribute="trailing" constant="8" id="mEW-fL-p7x"/>
+                    <constraint firstItem="9IK-nl-kbM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="rDv-Oa-A9R"/>
+                    <constraint firstItem="I2z-wm-mBr" firstAttribute="top" secondItem="fE2-pZ-9Si" secondAttribute="bottom" constant="8" id="rxC-bT-HDR"/>
+                    <constraint firstItem="fE2-pZ-9Si" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="v5n-6e-zVs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImg" destination="9IK-nl-kbM" id="rkX-oF-ebN"/>
+                <outlet property="dateLabel" destination="EaB-nf-V7d" id="84C-DG-SkB"/>
+                <outlet property="detailLabel" destination="I2z-wm-mBr" id="3We-hT-PnI"/>
+                <outlet property="naneLabel" destination="fE2-pZ-9Si" id="bzv-CO-5JJ"/>
+            </connections>
+            <point key="canvasLocation" x="70" y="16"/>
+        </tableViewCell>
+    </objects>
+</document>

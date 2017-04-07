@@ -53,12 +53,6 @@ class BookTabBar: UIView {
     
     @IBAction func collectAction(_ sender: Any) {
         
-        let btn = sender as! UIButton
-        
-        
-        
-        
-        
         self.delegate?.btnClick(tag: 2)
     }
     

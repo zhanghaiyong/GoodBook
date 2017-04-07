@@ -61,14 +61,25 @@
 }
 
 #pragma mark UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    NSMutableString *times = [[NSMutableString alloc]initWithFormat:@"%@", textView.text];
+    //字符串查找,可以判断字符串中是否有
+    if ([times hasPrefix:@"@"]) {
+        textView.text = @"";
+        // textView.textColor =  RGB(70, 70, 70);
+    }
+    return YES;
+}
+
 - (void)textViewDidChange:(UITextView *)textView {
 
-    CGRect frame = [self.textView.text boundingRectWithSize:CGSizeMake(self.textView.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.textView.font} context:nil];
+    CGRect frame = [self.textView.text boundingRectWithSize:CGSizeMake(self.textView.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.textView.font} context:nil];
     
-    if ([self.delegate respondsToSelector:@selector(textViewHeightDidChange:)]) {
-        
-        [self.delegate textViewHeightDidChange:frame.size.height];
-    }
+        if ([self.delegate respondsToSelector:@selector(textViewHeightDidChange:)]) {
+            
+            [self.delegate textViewHeightDidChange:frame.size.height];
+        }
 }
 
 - (IBAction)releaseAction:(id)sender {
@@ -77,6 +88,11 @@
         
         [self.delegate releaseComment:self.textView.text];
     }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
