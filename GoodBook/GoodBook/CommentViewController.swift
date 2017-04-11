@@ -10,20 +10,33 @@ import UIKit
 
 class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,InputViewDelegate {
 
-    @IBOutlet weak var inputV: InputView!
     var BookObject : AVObject?
     var dataArray = NSMutableArray()
     var keyBoardHeight : CGFloat?
     
+    var tableV: UITableView!
+    var input : InputView?
     
-    @IBOutlet weak var tableV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.white
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 64))
+        label.text = "评论区"
+        label.font = UIFont(name: MY_FONT, size: 16)
+        label.textColor = MAIN_RED
+        label.textAlignment = .center
+        self.view.addSubview(label)
+        
+        self.tableV = UITableView(frame: CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT-64-44))
+        self.tableV.delegate = self;
+        self.tableV.dataSource = self;
         self.tableV.estimatedRowHeight = 300
         self.tableV.rowHeight = UITableViewAutomaticDimension
         self.tableV.register(CommentCell.classForCoder(), forCellReuseIdentifier: "cell")
+        self.view.addSubview(self.tableV!)
         self.tableV.mj_header = MJRefreshNormalHeader(refreshingBlock: { 
             
             
@@ -75,7 +88,11 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         self.tableV.mj_header.beginRefreshing()
         
-        self.inputV!.textView.text = "fsdgdfsjhzdsfhs";
+        self.input = Bundle.main.loadNibNamed("InputView", owner: self, options: nil)?.last as? InputView
+        self.input?.frame = CGRect(x: 0, y: SCREEN_HEIGHT-44, width: SCREEN_WIDTH, height: 44)
+        self.input?.delegate = self;
+        self.view.addSubview(self.input!)
+        
     }
 
     //UITableViewDelegate && UITablViewDataSource
@@ -109,14 +126,13 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
     }
     
-    
     //InputViewDelegate
     func keyBoardWillShow(_ view: InputView!, keyBoardH: CGFloat, animationDuration duration: TimeInterval, animationCurve: UIViewAnimationCurve) {
         
         self.keyBoardHeight = keyBoardH
         UIView.animate(withDuration: duration, delay: 0, options: .beginFromCurrentState, animations: {
             
-            self.inputV?.bottom = SCREEN_HEIGHT - keyBoardH
+            self.input?.bottom = SCREEN_HEIGHT - keyBoardH
             
         }) { (finish) in
         }
@@ -127,7 +143,7 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         UIView.animate(withDuration: duration, delay: 0, options: .beginFromCurrentState, animations: {
             
-            self.inputV?.bottom = SCREEN_HEIGHT
+            self.input?.bottom = SCREEN_HEIGHT
             
         }) { (finish) in
             
@@ -136,9 +152,9 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func textViewHeightDidChange(_ height: CGFloat) {
         
-        if height > (self.inputV?.height)! && (self.inputV?.height)! < 100 {
-            self.inputV?.height = height+10
-            self.inputV?.bottom = SCREEN_HEIGHT - self.keyBoardHeight!
+        if height > (self.input?.height)! && (self.input?.height)! < 100 {
+            self.input?.height = height+10
+            self.input?.bottom = SCREEN_HEIGHT - self.keyBoardHeight!
         }
     }
     
@@ -154,16 +170,20 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 
                 if success {
                     
-                    self.inputV?.textView.resignFirstResponder()
-                    self.inputV?.frame.size = CGSize(width: SCREEN_WIDTH, height: 44)
-                    self.inputV?.textView.text = ""
+                    self.input?.textView.resignFirstResponder()
+                    self.input?.frame = CGRect(x: 0, y: SCREEN_HEIGHT-44, width: SCREEN_WIDTH, height: 44)
+                    self.input?.textView.text = ""
                     ProgressHUD.showSuccess("评论成功")
                     
                     // 原子增加查看的次数
                     self.BookObject?.incrementKey("commentNumber")
-                    // 保存时自动取回云端最新数据
-                    self.BookObject?.fetchWhenSave = true;
-                    self.BookObject?.saveInBackground()
+                    self.dataArray.add(object)
+                    self.tableV.reloadData()
+                    
+                    let index = NSIndexPath(row: self.dataArray.count-1, section: 0)
+                    self.tableV.scrollToRow(at: index as IndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+                    
+                    
                 }else {
                     
                     ProgressHUD.showError("评论失败")
@@ -175,8 +195,14 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
+    func closeAction() {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    @IBAction func colseAction(_ sender: Any) {
+    
+    
+    func sureAction() {
         
         self.dismiss(animated: true, completion: nil)
     }

@@ -178,6 +178,7 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
             print("chat")
             
             let commentVC = CommentViewController()
+            GeneralFactory.addTitleWithTitle(target: commentVC, title1: "", title2: "关闭")
             commentVC.BookObject = self.bookObject!
             self.present(commentVC, animated: true, completion: { 
                 

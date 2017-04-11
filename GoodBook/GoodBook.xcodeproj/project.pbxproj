@@ -13,7 +13,6 @@
 		997077BA1E960E4D00BBB11F /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997077B91E960E4D00BBB11F /* InputView.xib */; };
 		997077BD1E960F5A00BBB11F /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 997077BC1E960F5A00BBB11F /* UIViewExt.m */; };
 		998060B41E972943003E377C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998060B21E972943003E377C /* CommentViewController.swift */; };
-		998060B51E972943003E377C /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998060B31E972943003E377C /* CommentViewController.xib */; };
 		998060B81E972BC8003E377C /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998060B61E972BC8003E377C /* CommentCell.swift */; };
 		998060B91E972BC8003E377C /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998060B71E972BC8003E377C /* CommentCell.xib */; };
 		99842D821E8CF19200935DCC /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99842D811E8CF19200935DCC /* BookDetailController.swift */; };
@@ -94,7 +93,6 @@
 		997077BB1E960F5A00BBB11F /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		997077BC1E960F5A00BBB11F /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		998060B21E972943003E377C /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
-		998060B31E972943003E377C /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		998060B61E972BC8003E377C /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		998060B71E972BC8003E377C /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		99842D811E8CF19200935DCC /* BookDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				99842D811E8CF19200935DCC /* BookDetailController.swift */,
 				998060B21E972943003E377C /* CommentViewController.swift */,
-				998060B31E972943003E377C /* CommentViewController.xib */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -603,7 +600,6 @@
 				99B94C061E8BC68100CA166C /* Login.storyboard in Resources */,
 				9987FA511E8A831E00E7DA87 /* segmented-bg@2x.png in Resources */,
 				9987FA501E8A831E00E7DA87 /* segmented-bg.png in Resources */,
-				998060B51E972943003E377C /* CommentViewController.xib in Resources */,
 				99DCD9161E83B8AF0092B064 /* page4.png in Resources */,
 				9987FA321E8A746400E7DA87 /* btn_star_evaluation_normal.png in Resources */,
 				9987FA331E8A746400E7DA87 /* btn_star_evaluation_press.png in Resources */,
