@@ -117,10 +117,63 @@ class pushViewController: BaseViewController,UITableViewDelegate,UITableViewData
         
         self.tableView?.deselectRow(at: indexPath, animated: true)
         let bookDetailVC = BookDetailController()
+        
         let object = self.dataArray[indexPath.row] as? AVObject
         bookDetailVC.bookObject = object
         bookDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(bookDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "删除") { (UITableViewRowAction, IndexPath) in
+            
+            ProgressHUD.show("")
+            
+            let object = self.dataArray[indexPath.row] as? AVObject
+            
+            //删除关于的书籍的评论
+            let commentQuery = AVQuery(className: "comment")
+            commentQuery.whereKey("BookObject", equalTo: object! as AVObject)
+            commentQuery.findObjectsInBackground({ (results, error) in
+                
+                for Book in results! {
+                
+                    let BookObject = Book as? AVObject
+                    BookObject?.deleteInBackground()
+                }
+             })
+            
+            //删除关于书籍的点赞
+            let collectQuery = AVQuery(className: "collect")
+            collectQuery.whereKey("BookObject", equalTo: object! as AVObject)
+            collectQuery.findObjectsInBackground({ (results, error) in
+                
+                for Book in results! {
+                    
+                    let BookObject = Book as? AVObject
+                    BookObject?.deleteInBackground()
+                }
+            })
+            
+            //删除书籍
+            object?.deleteInBackground({ (success, error) in
+
+                if success {
+                
+                    ProgressHUD.showSuccess("删除成功")
+                    self.dataArray.removeObject(at: indexPath.row)
+                    self.tableView?.reloadData()
+                }
+                
+            })
+        }
+        
+        return [(deleteAction as UITableViewRowAction)]
     }
     
 
@@ -144,6 +197,11 @@ class pushViewController: BaseViewController,UITableViewDelegate,UITableViewData
     func pushNewBook() {
         
         let vc = pushNewBookController()
+        vc.callBack = ({(Void) ->Void in
+        
+            self.tableView?.mj_header.beginRefreshing()
+            
+        })
         GeneralFactory.addTitleWithTitle(target: vc, title1: "关闭", title2:"发布")
         self.present(vc, animated: true) { }
         

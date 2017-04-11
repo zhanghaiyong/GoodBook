@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+protocol BookDetailViewDelegate {
+    
+    func BrowserBigCover()
+}
+
 class BookDetailView2: UIView {
 
     @IBOutlet weak var BookName: UILabel!
@@ -17,6 +23,10 @@ class BookDetailView2: UIView {
     @IBOutlet weak var score: LDXScore!
     @IBOutlet weak var More: UILabel!
     @IBOutlet weak var cover: UIImageView!
+    
+    var delegate : BookDetailViewDelegate?
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -24,6 +34,13 @@ class BookDetailView2: UIView {
         // Drawing code
     }
     */
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(BookDetailView2.tapImageAction))
+        self.cover.addGestureRecognizer(tap)
+    }
+    
     
     override func draw(_ rect: CGRect) {
         
@@ -33,6 +50,11 @@ class BookDetailView2: UIView {
         context?.move(to: CGPoint(x: 8, y: self.frame.size.height-2))
         context?.addLine(to: CGPoint(x: self.frame.size.width-8, y: self.frame.size.height-2))
         context?.strokePath()
+    }
+    
+    func tapImageAction() {
+        
+        self.delegate?.BrowserBigCover()
     }
 
 }

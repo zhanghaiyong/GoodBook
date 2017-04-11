@@ -19,4 +19,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIViewExt.h"
 #import "InputView.h"
- 
+#import "MWPhotoBrowser.h"
+
+#import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>

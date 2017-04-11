@@ -12,4 +12,5 @@ pod 'AVOSCloud'
 pod 'MWPhotoBrowser', '~> 2.1.2'
 pod 'JVFloatLabeledTextField'
 pod 'IQKeyboardManager','3.3.7'
+
 end

@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias pushNewBookBlock = (Void) -> Void
+
 class pushNewBookController: BaseViewController,bookTitleDelegate,PhotoPickerDelegate,VPImageCropperDelegate,UITableViewDelegate,UITableViewDataSource {
 
     
@@ -21,6 +23,9 @@ class pushNewBookController: BaseViewController,bookTitleDelegate,PhotoPickerDel
     var score : LDXScore?
     //是否显示星星
     var showScore : Bool = false
+    
+    var callBack : pushNewBookBlock?
+    
     
     
     override func viewDidLoad() {
@@ -63,6 +68,9 @@ class pushNewBookController: BaseViewController,bookTitleDelegate,PhotoPickerDel
             let dict = notification.userInfo
             if String(describing: dict!["success"]!) == "true"{
                 ProgressHUD.showSuccess("上传成功")
+                
+                self.callBack!()
+                
                 self.dismiss(animated: true, completion: { () -> Void in
                     
                 })

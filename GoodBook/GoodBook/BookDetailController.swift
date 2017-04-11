@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegate {
+class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegate,BookDetailViewDelegate {
 
     var bookObject : AVObject?
     var bookDetailView : BookDetailView2?
@@ -21,6 +21,7 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        UMSocialUIManager.setPreDefinePlatforms([UMSocialPlatformType.wechatSession,UMSocialPlatformType.QQ,UMSocialPlatformType.sina])
         
         let manager = IQKeyboardManager.shared()
         manager.isEnabled = false
@@ -29,7 +30,7 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
         
         self.bookDetailView = Bundle.main.loadNibNamed("BookDetailView2", owner: self, options: nil)?.last as? BookDetailView2
         self.bookDetailView?.frame = CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT/4)
-        
+        self.bookDetailView?.delegate = self
         //封面
         let coverFile = self.bookObject!["Cover"] as? AVFile
         self.bookDetailView?.cover?.sd_setImage(with: URL.init(string: coverFile!.url!), placeholderImage: UIImage(named: "Cover"))
@@ -92,6 +93,34 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
             }
         }
     }
+    
+    //BookDetailView2Delegate
+    func BrowserBigCover() {
+        
+        let coverFile = self.bookObject!["Cover"] as? AVFile
+        let photo = MWPhoto(url: URL.init(string: coverFile!.url!))
+        let photos = [(photo! as MWPhoto)]
+        
+        let browser = MWPhotoBrowser(photos: photos)
+        browser?.displayActionButton = true;//分享按钮,默认是
+        browser?.displayNavArrows = true;//左右分页切换,默认否
+        browser?.alwaysShowControls = true;//控制条件控件 是否显示,默认否
+        browser?.zoomPhotosToFill = true;//是否全屏,默认是
+        browser?.enableGrid = true;//是否允许用网格查看所有图片,默认是
+        browser?.startOnGrid = true;//是否第一张,默认否
+        browser?.enableSwipeToDismiss = true;
+        browser?.setCurrentPhotoIndex(0)
+        let nc = UINavigationController(rootViewController: browser!)
+        nc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.present(nc, animated: true, completion: nil);
+        
+    }
+    
+    //MWPhotoBrowser
+    func photoBrowserDidFinishModalPresentation(_ photoBrowser: MWPhotoBrowser!) {
+        self .dismiss(animated: true, completion: nil)
+    }
+    
     
     //InputViewDelegate
     func keyBoardWillShow(_ view: InputView!, keyBoardH: CGFloat, animationDuration duration: TimeInterval, animationCurve: UIViewAnimationCurve) {
@@ -234,6 +263,16 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
             break
         case 3:
             print("share")
+            
+//            UMSocialUIManager.removeAllCustomPlatformWithoutFilted()//添加复制按钮就注释此行 删除所有的用户自定义的平台
+//            UMSocialShareUIConfig.shareInstance().sharePageGroupViewConfig.sharePageGroupViewPostionType = UMSocialSharePageGroupViewPositionType.bottom
+//            UMSocialShareUIConfig.shareInstance().sharePageScrollViewConfig.shareScrollViewPageItemStyleType = UMSocialPlatformItemViewBackgroudType.iconAndBGRadius
+            UMSocialUIManager.showShareMenuViewInWindow { (platformType, userinfo) in
+                
+                
+                
+            }
+            
             break
         default:
             break
