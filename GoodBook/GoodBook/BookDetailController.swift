@@ -269,10 +269,20 @@ class BookDetailController: UIViewController,BookTabBarDelegate,InputViewDelegat
 //            UMSocialShareUIConfig.shareInstance().sharePageScrollViewConfig.shareScrollViewPageItemStyleType = UMSocialPlatformItemViewBackgroudType.iconAndBGRadius
             UMSocialUIManager.showShareMenuViewInWindow { (platformType, userinfo) in
                 
+                //创建分享消息对象
+                let messageObject = UMSocialMessageObject()
+                //创建网页内容对象
+                let shareObject = UMShareWebpageObject.shareObject(withTitle: "标题", descr: "描述", thumImage: UIImage(named: "Avatar"))
+                //设置网页地址
+                shareObject?.webpageUrl = "http://www.baidu.com"
+                //分享消息对象设置分享内容对象
+                messageObject.shareObject = shareObject
                 
-                
+                UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (results, error) in
+                    
+                    print("\(results)" + "\(error)")
+                })
             }
-            
             break
         default:
             break
